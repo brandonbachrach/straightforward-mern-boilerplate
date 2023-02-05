@@ -1,0 +1,28 @@
+{
+  "name": "mern-boilerplate",
+  "version": "1.0.2",
+  "engines": {
+    "node": "14.x",
+    "yarn": "1.x"
+  },
+  "private": true,
+  "workspaces": ["client", "server"],
+  "description": "Simple Boilerplate for MERN applications",
+  "scripts": {
+    "test": "jest",
+    "server": "yarn workspace server start",
+    "serverdev": "yarn workspace server dev",
+    "client": "yarn workspace client start",
+    "client-build": "yarn workspace client build",
+    "dev": "concurrently -n 'server,client' -c 'yellow,blue' \"yarn run serverdev\" \"yarn run client\"",
+    "start": "concurrently -n 'server,client' -c 'yellow,blue' \"yarn run dev\" \"yarn run client\""
+  },
+  "author": "Brandon Bachrach",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^9.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
